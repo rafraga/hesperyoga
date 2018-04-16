@@ -6,6 +6,7 @@
   <title>Hesper Yoga</title>
   
   <style>
+      
       * {box-sizing: border-box;}
       ul {list-style-type: none;}
       body {font-family: Verdana, sans-serif; overflow:hidden;}
@@ -89,7 +90,58 @@
       @media screen and (max-width: 290px) {
           .weekdays li, .days li {width: 12.2%;}
       }
+
+        .speaker {
+        height: 30px;
+        width: 30px;
+        position: relative;
+        overflow: hidden;
+        display: inline-block;
+        }
+        .speaker span {
+        display: block;
+        width: 8px;
+        height: 8px;
+        background: transparent;
+        margin: 11px 0 0 2px;
+        }
+        .speaker span:after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-color: transparent transparent transparent transparent;
+        border-width: 10px 14px 10px 15px;
+        left: -13px;
+        top: 5px;
+        }
+        .speaker span:before {
+        transform: rotate(45deg);
+        border-radius: 0 50px 0 0;
+        content: '';
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        border-style: double;
+        border-color: #fff;
+        border-width: 8px 8px 0 0;
+        left: 18px;
+        top: 9px;
+        transition: all 0.2s ease-out;
+        }
+        .speaker:hover span:before {
+        transform: scale(0.9) translate(-3px, 0) rotate(42deg);
+        }
+        .speaker.mute span:before {
+        transform: scale(0.3) translate(-15px, 0) rotate(36deg);
+        opacity: 0;
+        }
+
+
+
       </style>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 
   
@@ -110,6 +162,11 @@
 <link href='https://fonts.googleapis.com/css?family=Coustard:400,900' rel='stylesheet' type='text/css'>
 
 <div class="menu">
+
+<a href="#" class="speaker" alt="Mute">
+  <span></span>
+</a>
+
 <nav role='navigation'>
   <ul class='nav'>
       <li data-menu='NEWS'>
