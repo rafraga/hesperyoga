@@ -49,5 +49,21 @@
   
   //go go go!
   var menu = new Menu().init();
-  
-  }(jQuery))
+
+  $('.speaker').click(function(e) {
+    if ($('#video-background').prop('muted')) {
+      $('#video-background').prop('muted', false);
+    } else {
+      $('#video-background').prop('muted', true);
+    };
+  });
+
+
+
+  }(jQuery));
+
+//  jQuery( document ).ready(function($) {
+//    $('.video-button').click(function() {
+//        this.paused ? this.play() : this.pause();
+//    });
+//});
